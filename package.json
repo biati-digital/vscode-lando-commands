@@ -1,0 +1,70 @@
+{
+	"name": "lando-commands",
+	"displayName": "Lando Commands",
+	"description": "Quickly run lando commands like start, stop, rebuild, destroy, etc. all from VSCode",
+	"version": "0.0.1",
+	"publisher": "biati",
+	"engines": {
+		"vscode": "^1.49.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:lando-commands.start",
+		"onCommand:lando-commands.stop",
+		"onCommand:lando-commands.rebuild",
+		"onCommand:lando-commands.destroy",
+		"onCommand:lando-commands.poweroff",
+		"onCommand:lando-commands.showconfig",
+		"onCommand:lando-commands.openconfig"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [{
+		        "command": "lando-commands.start",
+		        "title": "Lando: Start"
+		    },
+		    {
+		        "command": "lando-commands.stop",
+		        "title": "Lando: Stop"
+		    },
+		    {
+		        "command": "lando-commands.rebuild",
+		        "title": "Lando: Rebuild"
+		    },
+		    {
+		        "command": "lando-commands.destroy",
+		        "title": "Lando: Destroy"
+		    },
+		    {
+		        "command": "lando-commands.poweroff",
+		        "title": "Lando: Power Off"
+			},
+			{
+			    "command": "lando-commands.showconfig",
+			    "title": "Lando: Reveal config file directory in Finder"
+			},
+			{
+			    "command": "lando-commands.openconfig",
+			    "title": "Lando: Edit config file"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.49.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^14.0.27",
+		"eslint": "^7.9.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.0.2",
+		"vscode-test": "^1.4.0"
+	}
+}
